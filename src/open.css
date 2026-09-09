@@ -1,0 +1,450 @@
+/* After the lock: a sunlit linen studio. Same story, different world. */
+
+body:has(.app-shell.is-open) {
+  color: #2a2118;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(197, 213, 200, 0.45), transparent 42%),
+    radial-gradient(circle at 10% 90%, rgba(232, 196, 168, 0.4), transparent 36%),
+    linear-gradient(180deg, #f7f2e8, #efe6d6 55%, #e7dccb);
+}
+
+body:has(.app-shell.is-open)::before {
+  opacity: 0.045;
+}
+
+.app-shell.is-open {
+  --ink: #2a2118;
+  --ink-soft: #6b5c4d;
+  --ivory: #2a2118;
+  --ivory-dim: #6b5c4d;
+  --gold: #c45c3e;
+  --gold-hot: #a8462e;
+  --deep-red: #c45c3e;
+  --hot-pink: #c45c3e;
+  --blush: #d4785c;
+  --cream: #fffaf3;
+  --glass: rgba(255, 250, 243, 0.7);
+  --glass-border: rgba(42, 33, 24, 0.12);
+  --glow: 0 18px 40px rgba(42, 33, 24, 0.08);
+  --font-display: "Newsreader", "Times New Roman", serif;
+  --font-serif: "Newsreader", "Times New Roman", serif;
+  --font-body: "Figtree", "Helvetica Neue", sans-serif;
+}
+
+.app-shell.is-open::after {
+  border-color: rgba(42, 33, 24, 0.1);
+}
+
+.app-shell.is-open .glow-blob.one {
+  background: #e8c4a8;
+  opacity: 0.42;
+}
+
+.app-shell.is-open .glow-blob.two {
+  background: #c5d5c8;
+  opacity: 0.38;
+}
+
+.app-shell.is-open .glow-blob.three {
+  background: #f0d9b8;
+  opacity: 0.4;
+}
+
+.app-shell.is-open .dream-cloud {
+  opacity: 0.28;
+  filter: none;
+}
+
+.app-shell.is-open .whisper {
+  color: rgba(196, 92, 62, 0.28);
+  font-family: "Newsreader", serif;
+}
+
+.app-shell.is-open .mood-night .whisper,
+.app-shell.is-open .mood-dark .whisper {
+  color: rgba(42, 33, 24, 0.28);
+}
+
+.app-shell.is-open .corner-flourish {
+  opacity: 0.35;
+  filter: sepia(0.2) saturate(0.8);
+}
+
+.app-shell.is-open .display-title {
+  font-family: "Newsreader", serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #2a2118;
+  text-shadow: none;
+  letter-spacing: -0.03em;
+}
+
+.app-shell.is-open .serif-title {
+  font-family: "Newsreader", serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #2a2118;
+}
+
+.app-shell.is-open .chapter-kicker,
+.app-shell.is-open .section-kicker,
+.app-shell.is-open .hero-for {
+  font-family: "Figtree", sans-serif;
+  letter-spacing: 0.22em;
+  color: #c45c3e;
+}
+
+.app-shell.is-open .hero-for {
+  font-size: 0.78rem;
+}
+
+.app-shell.is-open .play-hint,
+.app-shell.is-open .body-copy,
+.app-shell.is-open .hero-today {
+  color: #6b5c4d;
+}
+
+.app-shell.is-open .hero-glow {
+  display: none;
+}
+
+.app-shell.is-open .journey-bar {
+  background: rgba(255, 250, 243, 0.82);
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  box-shadow: 0 10px 28px rgba(42, 33, 24, 0.08);
+}
+
+.app-shell.is-open .journey-back,
+.app-shell.is-open .journey-next {
+  background: #fffaf3;
+  color: #c45c3e;
+  border: 1px solid rgba(196, 92, 62, 0.35);
+}
+
+.app-shell.is-open .journey-back {
+  background: transparent;
+  border-color: transparent;
+  color: #6b5c4d;
+}
+
+.app-shell.is-open .journey-label {
+  color: #2a2118;
+  font-style: italic;
+}
+
+.app-shell.is-open .journey-dot {
+  background: rgba(42, 33, 24, 0.16);
+  box-shadow: none;
+  border-radius: 999px;
+}
+
+.app-shell.is-open .journey-dot.is-current {
+  background: #c45c3e;
+  box-shadow: none;
+}
+
+/* Letter as a ruled notebook page */
+.app-shell.is-open .envelope-pocket {
+  background: linear-gradient(180deg, #d4785c, #c45c3e);
+  box-shadow: 0 14px 24px rgba(42, 33, 24, 0.12);
+}
+
+.app-shell.is-open .envelope-flap {
+  background: linear-gradient(180deg, #f0d9b8, #e8c4a8);
+}
+
+.app-shell.is-open .wax-seal {
+  background: radial-gradient(circle, #c45c3e, #8a3220);
+}
+
+.app-shell.is-open .stationery {
+  background: #fffaf3;
+  color: #2a2118;
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  border-left: 4px solid #c45c3e;
+  border-radius: 2px;
+  box-shadow: 0 18px 40px rgba(42, 33, 24, 0.1);
+}
+
+.app-shell.is-open .stationery .letter-line,
+.app-shell.is-open .stationery p {
+  color: #2a2118;
+}
+
+.app-shell.is-open .letter-line.signoff {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .letter-nav button,
+.app-shell.is-open .deck-nav button,
+.app-shell.is-open .soft-btn {
+  background: #fffaf3;
+  color: #c45c3e;
+  border: 1px solid rgba(196, 92, 62, 0.35);
+}
+
+.app-shell.is-open .stationery .chapter-progress,
+.app-shell.is-open .chapter-progress,
+.app-shell.is-open .deck-count {
+  color: #6b5c4d;
+}
+
+.app-shell.is-open .reason-card,
+.app-shell.is-open .reason-spotlight,
+.app-shell.is-open .first-bead,
+.app-shell.is-open .secret-drawer,
+.app-shell.is-open .first-card,
+.app-shell.is-open .heart-card {
+  background: #fffaf3;
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  color: #2a2118;
+  border-radius: 2px;
+  box-shadow: 0 12px 28px rgba(42, 33, 24, 0.06);
+}
+
+.app-shell.is-open .reason-spotlight h3,
+.app-shell.is-open .first-card h3,
+.app-shell.is-open .secret-lid,
+.app-shell.is-open .reason-card h3 {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .reason-card.open,
+.app-shell.is-open .first-bead.is-seen,
+.app-shell.is-open .secret-drawer.is-seen,
+.app-shell.is-open .secret-drawer.is-open,
+.app-shell.is-open .first-bead.is-open {
+  background: #fff3ea;
+  box-shadow: 0 12px 28px rgba(196, 92, 62, 0.08);
+}
+
+.app-shell.is-open .first-num {
+  border: 1px solid #c45c3e;
+  color: #c45c3e;
+  background: #fffaf3;
+  border-radius: 999px;
+}
+
+.app-shell.is-open .first-bead.is-seen .first-num {
+  background: #c45c3e;
+  color: #fffaf3;
+}
+
+.app-shell.is-open .firsts-rail {
+  background: rgba(196, 92, 62, 0.16);
+}
+
+.app-shell.is-open .firsts-fill {
+  background: linear-gradient(#d4785c, #c45c3e);
+}
+
+.app-shell.is-open .heart-message,
+.app-shell.is-open .heart-us-line,
+.app-shell.is-open .heart-combo {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .heart-name {
+  color: #fffaf3;
+  text-shadow: 0 6px 18px rgba(42, 33, 24, 0.25);
+}
+
+.app-shell.is-open .universe-sky {
+  border-radius: 2px;
+  background:
+    radial-gradient(circle at 70% 18%, rgba(255, 250, 243, 0.7), transparent 22%),
+    linear-gradient(180deg, #b7c9d4 0%, #d5e0d8 48%, #efe6d6 100%);
+  box-shadow: 0 18px 40px rgba(42, 33, 24, 0.1);
+}
+
+.app-shell.is-open .constellation-lines polyline,
+.app-shell.is-open .constellation-lines .is-lit {
+  stroke: rgba(42, 33, 24, 0.35);
+  filter: none;
+}
+
+.app-shell.is-open .star-popup {
+  background: #fffaf3;
+  color: #2a2118;
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  border-radius: 2px;
+}
+
+.app-shell.is-open .star-popup h3,
+.app-shell.is-open .star-popup button {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .memory-card {
+  background: #fffaf3;
+  color: #2a2118;
+  border-radius: 2px;
+  box-shadow: 0 16px 32px rgba(42, 33, 24, 0.1);
+}
+
+.app-shell.is-open .memory-card::before,
+.app-shell.is-open .washi.rose,
+.app-shell.is-open .washi.lavender,
+.app-shell.is-open .washi.blush {
+  background: rgba(196, 92, 62, 0.35);
+}
+
+.app-shell.is-open .washi.cream {
+  background: rgba(95, 111, 82, 0.25);
+}
+
+.app-shell.is-open .memory-photo.rose,
+.app-shell.is-open .memory-photo.peach,
+.app-shell.is-open .memory-photo.lavender,
+.app-shell.is-open .memory-photo.blush {
+  background: #efe6d6;
+}
+
+.app-shell.is-open .memory-focus {
+  background: rgba(42, 33, 24, 0.45);
+}
+
+.app-shell.is-open .memory-focus-card {
+  background: #fffaf3;
+  color: #2a2118;
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  border-radius: 2px;
+}
+
+.app-shell.is-open .memory-focus-card button {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .box-body {
+  background: linear-gradient(180deg, #d4785c, #c45c3e);
+  box-shadow: 0 14px 22px rgba(42, 33, 24, 0.16);
+}
+
+.app-shell.is-open .box-lid {
+  background: linear-gradient(180deg, #5f6f52, #4a5840);
+}
+
+.app-shell.is-open .box-ribbon-v,
+.app-shell.is-open .box-ribbon-h,
+.app-shell.is-open .box-bow::before,
+.app-shell.is-open .box-bow::after {
+  background: #fffaf3;
+}
+
+.app-shell.is-open .gift-reveal h3 {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .finale,
+.app-shell.is-open .experience.journey .finale {
+  background:
+    radial-gradient(circle at 50% 28%, rgba(196, 92, 62, 0.12), transparent 36%),
+    linear-gradient(180deg, #efe6d6, #e7dccb);
+  border-radius: 0;
+}
+
+.app-shell.is-open .finale .display-title,
+.app-shell.is-open .finale-heart-copy .display-title,
+.app-shell.is-open .finale-name,
+.app-shell.is-open .finale .serif-title,
+.app-shell.is-open .finale-heart-copy .serif-title {
+  color: #2a2118;
+  text-shadow: none;
+}
+
+.app-shell.is-open .finale-lines p,
+.app-shell.is-open .play-hint.light {
+  color: #6b5c4d;
+}
+
+.app-shell.is-open .finale-scrap {
+  background: #fffaf3;
+  border: 1px solid rgba(42, 33, 24, 0.1);
+  border-radius: 2px;
+}
+
+.app-shell.is-open .finale-scrap .scrap-intro,
+.app-shell.is-open .finale-scrap p {
+  color: #2a2118;
+}
+
+.app-shell.is-open .romantic-btn,
+.app-shell.is-open .replay-btn,
+.app-shell.is-open .music-btn {
+  background: #c45c3e;
+  color: #fffaf3;
+  border: 1px solid #c45c3e;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.app-shell.is-open .romantic-btn:hover:not(:disabled),
+.app-shell.is-open .replay-btn:hover,
+.app-shell.is-open .music-btn:hover {
+  background: #2a2118;
+  color: #fffaf3;
+  border-color: #2a2118;
+}
+
+.app-shell.is-open .egg-toast {
+  background: #fffaf3;
+  color: #2a2118;
+  border: 1px solid rgba(42, 33, 24, 0.12);
+  border-radius: 2px;
+}
+
+.app-shell.is-open .recap-screen {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(196, 92, 62, 0.1), transparent 40%),
+    linear-gradient(180deg, #f7f2e8, #efe6d6);
+  color: #2a2118;
+}
+
+.app-shell.is-open .recap-progress {
+  background: rgba(42, 33, 24, 0.08);
+}
+
+.app-shell.is-open .recap-progress-fill {
+  background: linear-gradient(90deg, #d4785c, #c45c3e);
+}
+
+.app-shell.is-open .recap-kicker {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .recap-title {
+  color: #2a2118;
+  text-shadow: none;
+  font-style: italic;
+}
+
+.app-shell.is-open .recap-body,
+.app-shell.is-open .recap-line {
+  color: #6b5c4d;
+}
+
+.app-shell.is-open .recap-frame {
+  border-radius: 2px;
+  background: #efe6d6;
+  box-shadow: 0 18px 40px rgba(42, 33, 24, 0.14);
+}
+
+.app-shell.is-open .recap-skip {
+  color: rgba(42, 33, 24, 0.4);
+}
+
+.app-shell.is-open .recap-skip:hover {
+  color: #2a2118;
+}
+
+.app-shell.is-open .login-glow {
+  filter: none;
+}
+
+.app-shell.is-open .rising-note {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .universe-count {
+  color: #6b5c4d;
+}

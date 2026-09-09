@@ -1,0 +1,576 @@
+/* Midnight observatory — last-loaded visual language */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.app-shell::after {
+  content: "";
+  position: fixed;
+  inset: 10px;
+  border: 1px solid rgba(212, 180, 131, 0.2);
+  pointer-events: none;
+  z-index: 8;
+}
+
+.glow-blob.one {
+  background: #3a2a18;
+  opacity: 0.45;
+}
+
+.glow-blob.two {
+  background: #24182e;
+  opacity: 0.4;
+}
+
+.glow-blob.three {
+  background: #1a2430;
+  opacity: 0.35;
+}
+
+.pink-flash {
+  background: radial-gradient(circle, rgba(240, 216, 166, 0.72), rgba(11, 10, 16, 0.35));
+}
+
+.dream-cloud {
+  opacity: 0.12;
+  filter: grayscale(1) brightness(0.45);
+}
+
+.balloon-frame,
+.side-garden,
+.login-float-hearts,
+.floating-heart-btn,
+.watermark-heart,
+.hero-hearts,
+.letter-flowers,
+.section-side-flowers,
+.finale-flowers {
+  display: none;
+}
+
+.whisper {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  color: rgba(212, 180, 131, 0.28);
+  letter-spacing: 0.04em;
+}
+
+.mood-night .whisper,
+.mood-dark .whisper {
+  color: rgba(244, 234, 216, 0.22);
+}
+
+.corner-flourish {
+  opacity: 0.45;
+  filter: grayscale(0.35) sepia(0.4) saturate(0.7);
+}
+
+/* Lock — cinema door, not candy phone */
+.login-screen {
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(212, 180, 131, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(11, 10, 16, 0.94), rgba(20, 16, 24, 0.96));
+}
+
+.phone-lock {
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(244, 234, 216, 0.06), transparent 28%),
+    rgba(16, 14, 22, 0.88);
+  border: 1px solid rgba(212, 180, 131, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 28px 70px rgba(0, 0, 0, 0.55);
+}
+
+.phone-shine {
+  background: linear-gradient(115deg, rgba(244, 234, 216, 0.08), transparent 34%, transparent 70%, rgba(212, 180, 131, 0.06));
+}
+
+.phone-notch {
+  width: 72px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(212, 180, 131, 0.22);
+}
+
+.lock-time {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--ivory);
+}
+
+.lock-date,
+.pass-hint,
+.login-subtitle {
+  color: var(--ivory-dim);
+}
+
+.lock-for {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.phone-lock .login-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ivory);
+}
+
+.passcode-label {
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.pass-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  border: 1px solid var(--gold);
+  background: transparent;
+}
+
+.pass-dot.is-filled {
+  background: var(--gold);
+  box-shadow: 0 0 10px rgba(212, 180, 131, 0.45);
+}
+
+.pad-key {
+  border-radius: 50%;
+  border: 1px solid rgba(212, 180, 131, 0.28);
+  background: rgba(244, 234, 216, 0.04);
+  color: var(--ivory);
+  box-shadow: none;
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+.pad-key:hover:not(:disabled) {
+  background: rgba(212, 180, 131, 0.12);
+  box-shadow: none;
+}
+
+.pad-key:active:not(:disabled) {
+  background: var(--gold);
+  color: #0b0a10;
+}
+
+/* Type */
+.display-title {
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--ivory);
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.serif-title {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ivory);
+}
+
+.chapter-kicker,
+.section-kicker,
+.hero-for {
+  font-family: var(--font-body);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero-for {
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+}
+
+.play-hint,
+.body-copy,
+.hero-today {
+  color: var(--ivory-dim);
+}
+
+.journey-chrome {
+  bottom: 16px;
+}
+
+.journey-bar {
+  background: rgba(11, 10, 16, 0.62);
+  border: 1px solid rgba(212, 180, 131, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 999px;
+  padding: 6px 8px;
+}
+
+.journey-back,
+.journey-next {
+  background: transparent;
+  color: var(--gold);
+  box-shadow: none;
+  border: 1px solid rgba(212, 180, 131, 0.28);
+}
+
+.journey-back {
+  border-color: transparent;
+  color: var(--ivory-dim);
+}
+
+.journey-label {
+  color: var(--ivory);
+  font-style: italic;
+}
+
+.journey-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: rgba(212, 180, 131, 0.28);
+  box-shadow: none;
+}
+
+.journey-dot.is-current {
+  background: var(--gold);
+  box-shadow: 0 0 10px rgba(212, 180, 131, 0.45);
+}
+
+/* Letter: aged folio on a dark stage */
+.envelope-pocket {
+  background: linear-gradient(180deg, #2a2430, #1a1520);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+}
+
+.envelope-flap {
+  background: linear-gradient(180deg, #3a3228, #2a221c);
+}
+
+.wax-seal {
+  background: radial-gradient(circle, #d4b483, #8a6a3a);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.stationery {
+  background: #f3ead8;
+  color: #2a2218;
+  border: 1px solid rgba(138, 106, 58, 0.28);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(212, 180, 131, 0.15),
+    0 22px 50px rgba(0, 0, 0, 0.4);
+  background-image: none;
+}
+
+.stationery .letter-line,
+.stationery p {
+  color: #2a2218;
+}
+
+.letter-line.signoff {
+  color: #6a4e28;
+}
+
+.letter-nav button,
+.deck-nav button,
+.soft-btn {
+  background: #1c1620;
+  color: var(--gold);
+  border: 1px solid rgba(212, 180, 131, 0.28);
+}
+
+.stationery .chapter-progress {
+  color: #6a4e28;
+}
+
+.chapter-progress,
+.deck-count {
+  color: var(--ivory-dim);
+}
+
+/* Rooms */
+.reason-card,
+.reason-spotlight,
+.first-bead,
+.secret-drawer,
+.first-card {
+  background: rgba(244, 234, 216, 0.06);
+  border: 1px solid rgba(212, 180, 131, 0.2);
+  box-shadow: none;
+  color: var(--ivory);
+  border-radius: 6px;
+}
+
+.reason-spotlight {
+  border-radius: 6px;
+  min-height: 280px;
+}
+
+.reason-spotlight h3,
+.first-card h3,
+.secret-lid {
+  color: var(--gold-hot);
+}
+
+.reason-card.open,
+.first-bead.is-seen,
+.secret-drawer.is-seen,
+.secret-drawer.is-open,
+.first-bead.is-open {
+  background: rgba(212, 180, 131, 0.1);
+  box-shadow: none;
+}
+
+.first-num {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+.first-bead.is-seen .first-num {
+  background: var(--gold);
+  color: #0b0a10;
+}
+
+.firsts-rail {
+  background: rgba(212, 180, 131, 0.16);
+}
+
+.firsts-fill {
+  background: linear-gradient(#f0d8a6, #d4b483);
+}
+
+.heart-card {
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(212, 180, 131, 0.12), transparent 46%),
+    #16121c;
+  border: 1px solid rgba(212, 180, 131, 0.22);
+}
+
+.heart-message,
+.heart-us-line,
+.heart-combo {
+  color: var(--gold);
+}
+
+.universe-sky {
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(212, 180, 131, 0.12), transparent 22%),
+    radial-gradient(circle at 78% 30%, rgba(80, 90, 130, 0.2), transparent 24%),
+    linear-gradient(180deg, #07060c 0%, #12101a 48%, #0a0c14 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.constellation-lines polyline,
+.constellation-lines .is-lit {
+  stroke: rgba(212, 180, 131, 0.45);
+  filter: drop-shadow(0 0 6px rgba(212, 180, 131, 0.35));
+}
+
+.star-popup {
+  background: #16121c;
+  color: var(--ivory);
+  border: 1px solid rgba(212, 180, 131, 0.28);
+  border-radius: 6px;
+}
+
+.star-popup h3 {
+  color: var(--gold);
+}
+
+.star-popup button {
+  color: var(--gold);
+}
+
+.memory-card {
+  background: #1a1620;
+  color: var(--ivory);
+  border-radius: 4px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.memory-card::before,
+.washi.rose,
+.washi.lavender,
+.washi.blush {
+  background: rgba(212, 180, 131, 0.35);
+}
+
+.washi.cream {
+  background: rgba(244, 234, 216, 0.2);
+}
+
+.memory-photo.rose,
+.memory-photo.peach,
+.memory-photo.lavender,
+.memory-photo.blush {
+  background: #121018;
+}
+
+.memory-focus {
+  background: rgba(8, 7, 12, 0.78);
+}
+
+.memory-focus-card {
+  background: #16121c;
+  color: var(--ivory);
+  border: 1px solid rgba(212, 180, 131, 0.24);
+  border-radius: 6px;
+}
+
+.memory-focus-card button {
+  color: var(--gold);
+}
+
+.box-body {
+  background: linear-gradient(180deg, #2a2430, #16121c);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.4);
+}
+
+.box-lid {
+  background: linear-gradient(180deg, #3a3228, #241c18);
+}
+
+.box-ribbon-v,
+.box-ribbon-h,
+.box-bow::before,
+.box-bow::after {
+  background: #d4b483;
+}
+
+.gift-reveal h3 {
+  color: var(--gold-hot);
+}
+
+.finale,
+.experience.journey .finale {
+  background:
+    radial-gradient(circle at 50% 32%, rgba(212, 180, 131, 0.16), transparent 34%),
+    linear-gradient(180deg, #0b0a10, #141018);
+  border-radius: 0;
+}
+
+.finale .display-title,
+.finale-heart-copy .display-title,
+.finale-name,
+.finale .serif-title,
+.finale-heart-copy .serif-title {
+  color: var(--ivory);
+  text-shadow: 0 0 28px rgba(212, 180, 131, 0.28);
+}
+
+.finale-lines p {
+  color: var(--ivory-dim);
+}
+
+.finale-scrap {
+  background: rgba(244, 234, 216, 0.05);
+  border: 1px solid rgba(212, 180, 131, 0.2);
+  border-radius: 4px;
+}
+
+.romantic-btn,
+.unlock-btn,
+.replay-btn,
+.music-btn {
+  border-radius: 2px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(212, 180, 131, 0.45);
+  box-shadow: none;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.romantic-btn:hover:not(:disabled),
+.unlock-btn:hover,
+.replay-btn:hover,
+.music-btn:hover {
+  background: var(--gold);
+  color: #0b0a10;
+  box-shadow: none;
+  filter: none;
+}
+
+.egg-toast {
+  background: #16121c;
+  color: var(--ivory);
+  border: 1px solid rgba(212, 180, 131, 0.28);
+  border-radius: 2px;
+}
+
+.recap-screen {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(212, 180, 131, 0.12), transparent 40%),
+    linear-gradient(180deg, #0b0a10 0%, #141018 48%, #0b0a10 100%);
+}
+
+.recap-progress-fill {
+  background: linear-gradient(90deg, #8a6a3a, #f0d8a6);
+}
+
+.recap-kicker {
+  color: var(--gold);
+}
+
+.recap-title {
+  color: var(--ivory);
+  text-shadow: none;
+  font-style: italic;
+}
+
+.recap-frame {
+  border-radius: 4px;
+  background: #121018;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.login-glow {
+  filter: grayscale(0.2) sepia(0.45) saturate(0.7);
+}
+
+.heart-name {
+  color: #0b0a10;
+  text-shadow: none;
+}
+
+.fall-petal,
+.wipe-petal {
+  background: radial-gradient(circle at 30% 30%, #f4ead8, #d4b483);
+}
+
+.wipe-hearts,
+.wipe-petals {
+  background: radial-gradient(circle at 50% 70%, rgba(212, 180, 131, 0.16), transparent 48%);
+}
+
+.wipe-fade {
+  background: rgba(212, 180, 131, 0.22);
+}
+
+@media (max-width: 640px) {
+  .app-shell::after {
+    inset: 6px;
+  }
+
+  .journey-bar {
+    border-radius: 10px;
+  }
+}
