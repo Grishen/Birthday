@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d5ff"/>
+      <stop offset="100%" stop-color="#ffd6e7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <path d="M70 210 C120 80, 200 70, 200 160 C200 70, 280 80, 330 210" fill="none" stroke="#fff8f0" stroke-width="8"/>
+  <circle cx="200" cy="118" r="10" fill="#fff8f0"/>
+  <text x="200" y="246" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#5c2a3d">A memory goes here</text>
+</svg>
