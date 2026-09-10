@@ -1,3 +1,5 @@
+const asset = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\//, "")}`;
+
 export const birthdayConfig = {
   // PERSONALIZE: her name, as it should appear in headings.
   name: "LEXI",
@@ -5,7 +7,7 @@ export const birthdayConfig = {
   password: "08152025",
 
   // PERSONALIZE: drop your song at public/audio/our-song.mp3
-  musicSrc: "/audio/our-song.mp3",
+  musicSrc: asset("audio/our-song.mp3"),
   musicLabel: "Our song",
   musicVolume: 0.6,
 
@@ -174,28 +176,28 @@ export const birthdayConfig = {
       id: "m1",
       date: "A day I keep replaying",
       caption: "One of my favorite days with you.",
-      image: "/assets/memories/Snapchat-1193347242.JPG",
+      image: asset("assets/memories/Snapchat-1193347242.JPG"),
       tint: "rose",
     },
     {
       id: "m2",
       date: "A smile I think about too much",
       caption: "This smile. That's it. That's the caption.",
-      image: "/assets/memories/memory-smile.jpg",
+      image: asset("assets/memories/memory-smile.jpg"),
       tint: "peach",
     },
     {
       id: "m3",
       date: "A memory I won't let fade",
       caption: "Another memory I never want to forget.",
-      image: "/assets/memories/IMG_0016.JPG",
+      image: asset("assets/memories/IMG_0016.JPG"),
       tint: "lavender",
     },
     {
       id: "m4",
       date: "Us, in the little in-between",
       caption: "Not a big moment. Just a perfect one.",
-      image: "/assets/memories/QZgyRzLQdeAnt.MP4",
+      image: asset("assets/memories/QZgyRzLQdeAnt.MP4"),
       tint: "blush",
     },
   ],
