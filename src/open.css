@@ -6,6 +6,43 @@ body:has(.app-shell.is-open) {
     radial-gradient(ellipse at 80% 0%, rgba(197, 213, 200, 0.45), transparent 42%),
     radial-gradient(circle at 10% 90%, rgba(232, 196, 168, 0.4), transparent 36%),
     linear-gradient(180deg, #f7f2e8, #efe6d6 55%, #e7dccb);
+  transition: background 0.9s ease;
+}
+
+body:has(.app-shell.is-open):has(.place-gold) {
+  background:
+    radial-gradient(ellipse at 70% 0%, rgba(240, 200, 140, 0.55), transparent 42%),
+    linear-gradient(180deg, #f8ead0, #f0d9b4 55%, #e8c8a0);
+}
+
+body:has(.app-shell.is-open):has(.place-lamp) {
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(255, 214, 150, 0.5), transparent 38%),
+    linear-gradient(180deg, #f3ddb8, #e6c48c 58%, #d4ae78);
+}
+
+body:has(.app-shell.is-open):has(.place-night) {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(183, 201, 212, 0.5), transparent 40%),
+    linear-gradient(180deg, #c5d0d6, #d5ddd4 52%, #e6ddd0);
+}
+
+body:has(.app-shell.is-open):has(.place-table) {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(196, 168, 130, 0.4), transparent 36%),
+    linear-gradient(180deg, #efe2cc, #e4d3b4 55%, #d8c4a4);
+}
+
+body:has(.app-shell.is-open):has(.place-wrap) {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(197, 213, 200, 0.5), transparent 40%),
+    linear-gradient(180deg, #f4eee4, #eadfd0 55%, #e0d0bc);
+}
+
+body:has(.app-shell.is-open):has(.place-dark) {
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(196, 92, 62, 0.16), transparent 40%),
+    linear-gradient(180deg, #e7dccb, #d8cbb8 55%, #cbbba6);
 }
 
 body:has(.app-shell.is-open)::before {
@@ -331,8 +368,13 @@ body:has(.app-shell.is-open)::before {
   background: #fffaf3;
 }
 
-.app-shell.is-open .gift-reveal h3 {
+.app-shell.is-open .gift-reveal h3,
+.app-shell.is-open .gift-coupon h3 {
   color: #c45c3e;
+}
+
+.app-shell.is-open .gift-coupon h3 {
+  font-size: clamp(2rem, 6vw, 2.55rem);
 }
 
 .app-shell.is-open .finale,
@@ -445,6 +487,36 @@ body:has(.app-shell.is-open)::before {
   color: #c45c3e;
 }
 
-.app-shell.is-open .universe-count {
+.app-shell.is-open .universe-count,
+.app-shell.is-open .wish-line {
   color: #6b5c4d;
+}
+
+.app-shell.is-open .wish-line.is-granted,
+.app-shell.is-open .letter-ps,
+.app-shell.is-open .chapter-payoff,
+.app-shell.is-open .coupon-stamp,
+.app-shell.is-open .tucked-slip {
+  color: #c45c3e;
+}
+
+.app-shell.is-open .gift-coupon {
+  border-color: rgba(42, 33, 24, 0.22);
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(196, 92, 62, 0.05) 10px,
+      rgba(196, 92, 62, 0.05) 11px
+    ),
+    #fffaf3;
+}
+
+.app-shell.is-open .us-heart.is-drawn {
+  stroke: rgba(196, 92, 62, 0.9);
+}
+
+.app-shell.is-open .sky-us {
+  color: rgba(42, 33, 24, 0.4);
 }

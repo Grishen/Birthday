@@ -1,14 +1,38 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { birthdayConfig } from "../data/birthdayConfig";
 import TeddyBears from "./TeddyBears";
 import { GlowHeartBackdrop } from "../visual/HeartMark";
 import HeartMark from "../visual/HeartMark";
 import { BalloonFrame, FlowerCluster, SparkleField } from "../visual/Decor";
 import BirthdayCake from "../visual/BirthdayCake";
+import { useCandleWish } from "../hooks/useCandleWish";
 
-export default function BirthdayHero({ cinematic, onHeadingClick, onBearClick, bearPose, onCakeBurst, compact }) {
+export default function BirthdayHero({
+  cinematic,
+  onHeadingClick,
+  onBearClick,
+  bearPose,
+  onCakeBurst,
+  compact,
+  onFind,
+}) {
   const [typed, setTyped] = useState("");
+  const [wished, setWished] = useState(false);
   const line = birthdayConfig.cinematic.subtext;
+
+  const grantWish = useCallback(
+    (event) => {
+      if (wished) return;
+      setWished(true);
+      onFind?.("wish");
+      const x = event?.clientX ?? window.innerWidth / 2;
+      const y = event?.clientY ?? window.innerHeight * 0.62;
+      onCakeBurst?.({ clientX: x, clientY: y });
+    },
+    [wished, onCakeBurst, onFind]
+  );
+
+  useCandleWish({ enabled: !wished && !cinematic, onWish: grantWish });
 
   useEffect(() => {
     if (!cinematic) {
@@ -44,7 +68,10 @@ export default function BirthdayHero({ cinematic, onHeadingClick, onBearClick, b
       {!cinematic && birthdayConfig.hero.todayLine && (
         <p className="hero-today">{birthdayConfig.hero.todayLine}</p>
       )}
-      <BirthdayCake interactive onBurst={onCakeBurst} />
+      <BirthdayCake interactive onBurst={grantWish} blown={wished} />
+      <p className={`wish-line ${wished ? "is-granted" : ""}`}>
+        {wished ? birthdayConfig.hero.wishGranted : birthdayConfig.hero.wishHint}
+      </p>
       <div className="hero-flowers" aria-hidden="true">
         <FlowerCluster />
       </div>

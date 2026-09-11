@@ -2,3 +2,15 @@ node_modules
 dist
 .DS_Store
 *.local
+
+# ECC (local-only; do not publish to GitHub)
+.cursor/agents/
+.cursor/skills/
+.cursor/rules/
+.cursor/commands/
+.cursor/.agents/
+.cursor/.pi/
+.cursor/scripts/
+.cursor/mcp-configs/
+.cursor/mcp.json
+.cursor/ecc-install-state.json

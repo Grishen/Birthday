@@ -10,6 +10,24 @@ const WHISPERS = {
     { text: "my favorite hello", side: "left", top: "64%" },
     { text: "♡ forever yours", side: "right", top: "74%" },
   ],
+  gold: [
+    { text: "this morning is yours", side: "left", top: "18%" },
+    { text: "make a wish", side: "right", top: "28%" },
+    { text: "my favorite day", side: "left", top: "62%" },
+  ],
+  lamp: [
+    { text: "read slowly", side: "left", top: "18%" },
+    { text: "I meant every line", side: "right", top: "36%" },
+    { text: "stay a little", side: "left", top: "70%" },
+  ],
+  table: [
+    { text: "keep these", side: "left", top: "20%" },
+    { text: "a shoebox of us", side: "right", top: "68%" },
+  ],
+  wrap: [
+    { text: "one more thing", side: "left", top: "18%" },
+    { text: "peek underneath", side: "right", top: "72%" },
+  ],
   night: [
     { text: "our little universe", side: "left", top: "16%" },
     { text: "wish on us", side: "right", top: "70%" },

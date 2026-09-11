@@ -10,6 +10,7 @@ import RomanticButton from "../visual/RomanticButton";
 function scrapLines(found) {
   if (!found) return [];
   const lines = [];
+  if (found.wish) lines.push("You made a wish. I was listening.");
   if (found.letter) lines.push("You opened the letter.");
   if (found.firsts?.length) {
     lines.push(`${found.firsts.length} first${found.firsts.length === 1 ? "" : "s"} along the way.`);
@@ -18,7 +19,12 @@ function scrapLines(found) {
     lines.push(`${found.reasons.length} reason${found.reasons.length === 1 ? "" : "s"} you opened.`);
   }
   if (found.stars?.length) {
-    lines.push(`${found.stars.length} star${found.stars.length === 1 ? "" : "s"} you found.`);
+    const allStars = found.stars.length >= 6;
+    lines.push(
+      allStars
+        ? "You found every star. The sky wrote us back."
+        : `${found.stars.length} star${found.stars.length === 1 ? "" : "s"} you found.`
+    );
   }
   if (found.secrets?.length) {
     lines.push(`${found.secrets.length} secret${found.secrets.length === 1 ? "" : "s"} only we know.`);

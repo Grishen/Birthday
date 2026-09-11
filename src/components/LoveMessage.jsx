@@ -19,8 +19,10 @@ export default function LoveMessage({ onFind }) {
   const [phase, setPhase] = useState("closed");
   const [page, setPage] = useState(0);
   const [kisses, setKisses] = useState([]);
+  const [tucked, setTucked] = useState(false);
   const lines = birthdayConfig.loveLetter.paragraphs;
   const current = PAGES[page] || [];
+  const showPs = kisses.length >= 3;
 
   useEffect(() => {
     setPhase("opening");
@@ -64,6 +66,12 @@ export default function LoveMessage({ onFind }) {
           </div>
           <article className="stationery love-letter living-paper" onClick={leaveKiss}>
             <SparkleField count={4} />
+            <button
+              className="letter-fold"
+              type="button"
+              aria-label="Peek the folded corner"
+              onClick={() => setTucked(true)}
+            />
             <div key={page} className="letter-page">
               {current.map((lineIndex) => (
                 <p
@@ -74,6 +82,7 @@ export default function LoveMessage({ onFind }) {
                 </p>
               ))}
             </div>
+            {showPs && <p className="letter-ps">{birthdayConfig.loveLetter.postscript}</p>}
             {kisses.map((kiss) => (
               <span key={kiss.id} className="paper-kiss" style={{ left: kiss.x, top: kiss.y }}>
                 <HeartMark size={18} color="#8a6a3a" />
@@ -101,6 +110,18 @@ export default function LoveMessage({ onFind }) {
       <div className="letter-bears">
         <TeddyBears pose="letter" variant="letter" />
       </div>
+      {tucked && (
+        <div className="tucked-room" onClick={() => setTucked(false)} role="dialog">
+          <article className="tucked-note" onClick={(event) => event.stopPropagation()}>
+            <p className="tucked-kicker">TUCKED IN THE FOLD</p>
+            <h3>{birthdayConfig.loveLetter.tuckedTitle}</h3>
+            <p>{birthdayConfig.loveLetter.tuckedBody}</p>
+            <button type="button" onClick={() => setTucked(false)}>
+              Keep this between us
+            </button>
+          </article>
+        </div>
+      )}
     </section>
   );
 }

@@ -1,10 +1,15 @@
-export default function BirthdayCake({ interactive = false, onBurst, className = "" }) {
+export default function BirthdayCake({
+  interactive = false,
+  onBurst,
+  blown = false,
+  className = "",
+}) {
   return (
     <button
       type="button"
-      className={`birthday-cake ${className}`}
+      className={`birthday-cake ${blown ? "is-blown" : ""} ${className}`}
       onClick={onBurst}
-      aria-label="Birthday cake"
+      aria-label={blown ? "Wish granted" : "Make a wish on the birthday cake"}
       disabled={!interactive && !onBurst}
     >
       <svg viewBox="0 0 180 150" aria-hidden="true">
@@ -22,16 +27,19 @@ export default function BirthdayCake({ interactive = false, onBurst, className =
           <rect x="0" y="10" width="5" height="22" rx="1.5" fill="#f4ead8" />
           <ellipse className="cake-flame" cx="2.5" cy="6" rx="4" ry="7" fill="#ffb703" />
           <ellipse className="cake-flame inner" cx="2.5" cy="7" rx="2" ry="4" fill="#fff3bf" />
+          <ellipse className="cake-smoke" cx="2.5" cy="2" rx="3" ry="5" fill="rgba(244,234,216,0.55)" />
         </g>
         <g className="candle" transform="translate(88 22)">
           <rect x="0" y="10" width="5" height="26" rx="1.5" fill="#e8c9a0" />
           <ellipse className="cake-flame" cx="2.5" cy="6" rx="4.2" ry="7.5" fill="#fb8b24" />
           <ellipse className="cake-flame inner" cx="2.5" cy="7" rx="2" ry="4" fill="#fff3bf" />
+          <ellipse className="cake-smoke" cx="2.5" cy="1" rx="3.2" ry="6" fill="rgba(244,234,216,0.5)" />
         </g>
         <g className="candle" transform="translate(106 28)">
           <rect x="0" y="10" width="5" height="22" rx="1.5" fill="#f4ead8" />
           <ellipse className="cake-flame" cx="2.5" cy="6" rx="4" ry="7" fill="#ffb703" />
           <ellipse className="cake-flame inner" cx="2.5" cy="7" rx="2" ry="4" fill="#fff3bf" />
+          <ellipse className="cake-smoke" cx="2.5" cy="2" rx="3" ry="5" fill="rgba(244,234,216,0.55)" />
         </g>
         <path
           d="M90 96c0 0-7-4.5-7-9.2 0-2.7 2-4.6 4.4-4.6 1.5 0 2.6 1 2.6 1s1.1-1 2.6-1c2.4 0 4.4 1.9 4.4 4.6 0 4.7-7 9.2-7 9.2z"

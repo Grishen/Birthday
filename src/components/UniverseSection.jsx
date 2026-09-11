@@ -3,6 +3,9 @@ import { birthdayConfig } from "../data/birthdayConfig";
 import HeartMark from "../visual/HeartMark";
 import TeddyBears from "./TeddyBears";
 
+const HEART_PATH =
+  "M50 78 C50 78 18 56 18 36 C18 24 28 18 38 18 C44 18 50 24 50 24 S56 18 62 18 C72 18 82 24 82 36 C82 56 50 78 50 78";
+
 export default function UniverseSection({ onFind }) {
   const [active, setActive] = useState(null);
   const [seen, setSeen] = useState([]);
@@ -11,6 +14,7 @@ export default function UniverseSection({ onFind }) {
   const star = stars.find((item) => item.id === active);
   const points = stars.map((item) => `${item.x},${item.y}`).join(" ");
   const wishes = birthdayConfig.play.wishing;
+  const complete = seen.length === stars.length;
 
   const openStar = (id) => {
     setActive(id);
@@ -37,13 +41,19 @@ export default function UniverseSection({ onFind }) {
   };
 
   return (
-    <section className="section chapter-stage universe-section">
+    <section className={`section chapter-stage universe-section ${complete ? "is-complete" : ""}`}>
       <div className="chapter-head">
         <p className="chapter-kicker">LOOK UP</p>
         <h2 className="serif-title">{birthdayConfig.universeHeading.replace(" ✨", "")}</h2>
-        <p className="body-copy">{birthdayConfig.play.skyHint}</p>
+        <p className="body-copy">
+          {complete ? birthdayConfig.play.skyComplete : birthdayConfig.play.skyHint}
+        </p>
       </div>
-      <div className="universe-sky living-sky" style={{ marginTop: 24 }} onClick={onSky}>
+      <div
+        className={`universe-sky living-sky ${complete ? "is-constellation" : ""}`}
+        style={{ marginTop: 24 }}
+        onClick={onSky}
+      >
         <svg className="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <polyline
             className={seen.length || shots.length ? "is-lit" : ""}
@@ -52,6 +62,7 @@ export default function UniverseSection({ onFind }) {
             stroke="rgba(255,214,231,0.35)"
             strokeWidth="0.4"
           />
+          <path className={`us-heart ${complete ? "is-drawn" : ""}`} d={HEART_PATH} />
         </svg>
         {stars.map((item) => (
           <button
@@ -62,7 +73,7 @@ export default function UniverseSection({ onFind }) {
             onClick={() => openStar(item.id)}
             aria-label={item.title}
           >
-            <HeartMark size={18} color="#f0d8a6" sparkle={item.id === "star-3"} />
+            <HeartMark size={18} color="#f0d8a6" sparkle={item.id === "star-3" || complete} />
           </button>
         ))}
         {shots.map((shot) => (
@@ -84,6 +95,7 @@ export default function UniverseSection({ onFind }) {
             </span>
           </div>
         )}
+        {complete && !star && <p className="sky-us">us</p>}
       </div>
       <p className="universe-count">
         {seen.length} of {stars.length} little pieces found

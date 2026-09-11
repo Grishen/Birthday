@@ -13,15 +13,15 @@ import SceneWipe from "./SceneWipe";
 import RomanticAmbience from "../visual/RomanticAmbience";
 
 const CHAPTERS = [
-  { id: "hero", label: "Today", wipe: "hearts", mood: "blush" },
-  { id: "letter", label: "The letter", wipe: "envelope", mood: "blush" },
-  { id: "firsts", label: "How we began", wipe: "hearts", mood: "blush" },
+  { id: "hero", label: "Today", wipe: "hearts", mood: "gold" },
+  { id: "letter", label: "The letter", wipe: "envelope", mood: "lamp" },
+  { id: "firsts", label: "How we began", wipe: "hearts", mood: "gold" },
   { id: "reasons", label: "Reasons", wipe: "hearts", mood: "blush" },
   { id: "heart", label: "My heart", wipe: "iris", mood: "blush" },
   { id: "universe", label: "The sky", wipe: "night", mood: "night" },
-  { id: "secrets", label: "Only we know", wipe: "envelope", mood: "blush" },
-  { id: "memories", label: "Us", wipe: "shutter", mood: "blush" },
-  { id: "gift", label: "A gift", wipe: "ribbon", mood: "blush" },
+  { id: "secrets", label: "Only we know", wipe: "envelope", mood: "lamp" },
+  { id: "memories", label: "Us", wipe: "shutter", mood: "table" },
+  { id: "gift", label: "A gift", wipe: "ribbon", mood: "wrap" },
   { id: "finale", label: "Always", wipe: "petals", mood: "dark" },
 ];
 
@@ -29,6 +29,7 @@ const LOCK_MS = 980;
 
 const emptyFound = {
   letter: false,
+  wish: false,
   reasons: [],
   stars: [],
   photos: [],
@@ -78,7 +79,9 @@ export default function ExperienceJourney({
 
   const onFind = useCallback((kind, id) => {
     setFound((current) => {
-      if (kind === "letter") return current.letter ? current : { ...current, letter: true };
+      if (kind === "letter" || kind === "wish") {
+        return current[kind] ? current : { ...current, [kind]: true };
+      }
       if (kind === "kisses" || kind === "heart") {
         return { ...current, [kind]: current[kind] + 1 };
       }
@@ -186,6 +189,7 @@ export default function ExperienceJourney({
                 onBearClick={onBearClick}
                 bearPose={bearPose}
                 onCakeBurst={onCakeBurst}
+                onFind={onFind}
               />
             )}
             {chapter.id === "letter" && <LoveMessage onFind={onFind} />}
@@ -212,7 +216,7 @@ export default function ExperienceJourney({
 
   return (
     <main
-      className={`experience journey ${ready ? "is-ready" : "is-cinematic"}`}
+      className={`experience journey place-${chapter.mood} ${ready ? "is-ready" : "is-cinematic"}`}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >

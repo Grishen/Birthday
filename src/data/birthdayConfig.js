@@ -33,6 +33,8 @@ export const birthdayConfig = {
     subtitle:
       "Today is officially my favorite day because it's the day my favorite person came into this world. ♡",
     todayLine: "This day. This girl. This little world I made you.",
+    wishHint: "Make a wish. Blow on the candles — or tap them if you're shy.",
+    wishGranted: "Wish noted. I'll help keep it.",
   },
 
   loveLetter: {
@@ -60,6 +62,11 @@ export const birthdayConfig = {
       "Today, tomorrow, and every day after that — it's you. Always you.",
       "— Yours, always. ♡",
     ],
+    postscript:
+      "P.S. I still get a little shy writing this. That's how I know it's real.",
+    tuckedTitle: "The thing I almost didn't say",
+    tuckedBody:
+      "I keep thinking about ordinary Tuesdays with you. Not the big days. The ones where you walk in, the room changes temperature, and I think — oh. There you are. That's the whole gift.",
   },
 
   reasonsHeading: "A Few Reasons Why I Love You ♡",
@@ -175,28 +182,28 @@ export const birthdayConfig = {
     {
       id: "m1",
       date: "A day I keep replaying",
-      caption: "One of my favorite days with you.",
+      caption: "I can still feel this one. The air. Your face. The way the day leaned toward us.",
       image: asset("assets/memories/Snapchat-1193347242.JPG"),
       tint: "rose",
     },
     {
       id: "m2",
       date: "A smile I think about too much",
-      caption: "This smile. That's it. That's the caption.",
+      caption: "This smile. I catch myself looking for it in other rooms.",
       image: asset("assets/memories/memory-smile.jpg"),
       tint: "peach",
     },
     {
       id: "m3",
       date: "A memory I won't let fade",
-      caption: "Another memory I never want to forget.",
+      caption: "If I could press this one between pages, I would.",
       image: asset("assets/memories/IMG_0016.JPG"),
       tint: "lavender",
     },
     {
       id: "m4",
       date: "Us, in the little in-between",
-      caption: "Not a big moment. Just a perfect one.",
+      caption: "Not a big moment. Just a perfect one. The kind I want more of.",
       image: asset("assets/memories/QZgyRzLQdeAnt.MP4"),
       tint: "blush",
     },
@@ -204,12 +211,16 @@ export const birthdayConfig = {
 
   gift: {
     heading: "WAIT... THERE'S ONE MORE THING 🎁",
-    subtext: "I wasn't going to stop there.",
-    revealTitle: "You ♡",
-    revealBody: "Honestly, you're the best gift life could've given me.",
+    subtext: "I wasn't going to stop there. Peel the wrapping — then check underneath.",
+    revealTitle: "One slow morning",
+    revealBody: "No plans. No rush. Just us, and whatever the day becomes.",
     // PERSONALIZE: "/assets/memories/gift.png" or "/assets/memories/gift.mp4" or leave null
     image: null,
-    extraMessage: null,
+    extraMessage: "This coupon does not expire. Breakfast optional. Holding your hand is not.",
+    tuckedLabel: "something slipped behind the wrapping",
+    tuckedTitle: "A private P.S.",
+    tuckedBody:
+      "If today feels like a lot of pretty words, here's the plain one: I am so glad you were born. Not as a line. As a fact I get to live with.",
   },
 
   finale: {
@@ -232,6 +243,7 @@ export const birthdayConfig = {
 
   firstsHeading: "How we began",
   firstsHint: "Tap each first. The line is us, drawing itself.",
+  firstsComplete: "That's the whole line. Noticed you. Kept you. Still keeping you.",
   firsts: [
     {
       id: "noticed",
@@ -282,9 +294,10 @@ export const birthdayConfig = {
   ],
 
   play: {
-    letterHint: "Leave a kiss anywhere on the letter.",
-    skyHint: "Tap a star. Or tap the night itself.",
-    memoryHint: "Tap a photo. I'll hold it up for you.",
+    letterHint: "Leave a kiss on the page. Peek the folded corner if you get curious.",
+    skyHint: "Tap every star. When they're all yours, the sky writes us back.",
+    skyComplete: "That's us. Drawn in the dark.",
+    memoryHint: "Peel the top one. Then the next. Like a shoebox of us.",
     finaleHint: "Tap anywhere. I keep falling for you.",
     kiss: "♡",
     wishing: [

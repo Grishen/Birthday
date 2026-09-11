@@ -16,9 +16,10 @@ export default function FirstsSection({ onFind }) {
 
   const current = firsts.find((item) => item.id === open);
   const drawn = seen.length / firsts.length;
+  const complete = seen.length === firsts.length;
 
   return (
-    <section className="section chapter-stage firsts-section">
+    <section className={`section chapter-stage firsts-section ${complete ? "is-complete" : ""}`}>
       <div className="chapter-head">
         <p className="chapter-kicker">BEFORE TODAY</p>
         <h2 className="serif-title">{birthdayConfig.firstsHeading}</h2>
@@ -46,6 +47,7 @@ export default function FirstsSection({ onFind }) {
           <p>{current.body}</p>
         </article>
       )}
+      {complete && <p className="chapter-payoff">{birthdayConfig.firstsComplete}</p>}
       <p className="chapter-progress">
         {seen.length} of {firsts.length} firsts
       </p>

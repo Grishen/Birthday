@@ -8,6 +8,7 @@ import MediaFrame from "../visual/MediaFrame";
 
 export default function GiftSection({ onOpen }) {
   const [stage, setStage] = useState("idle");
+  const [tucked, setTucked] = useState(false);
   const gift = birthdayConfig.gift;
 
   const open = () => {
@@ -52,15 +53,34 @@ export default function GiftSection({ onOpen }) {
         {stage === "opened" && (
           <div className="gift-reveal">
             {gift.image && <MediaFrame src={gift.image} className="gift-media" controls />}
-            <h3>{gift.revealTitle}</h3>
-            <p>{gift.revealBody}</p>
-            {gift.extraMessage && <p>{gift.extraMessage}</p>}
+            <div className="gift-coupon">
+              <p className="coupon-kicker">A PROMISE · DOES NOT EXPIRE</p>
+              <h3>{gift.revealTitle}</h3>
+              <p>{gift.revealBody}</p>
+              {gift.extraMessage && <p className="coupon-fine">{gift.extraMessage}</p>}
+              <span className="coupon-stamp">♡ forever</span>
+            </div>
+            <button className="tucked-slip" type="button" onClick={() => setTucked(true)}>
+              {gift.tuckedLabel}
+            </button>
           </div>
         )}
       </div>
       <div className="gift-bears">
         <TeddyBears pose="present" variant="present" />
       </div>
+      {tucked && (
+        <div className="tucked-room" onClick={() => setTucked(false)} role="dialog">
+          <article className="tucked-note" onClick={(event) => event.stopPropagation()}>
+            <p className="tucked-kicker">FOUND BEHIND THE WRAPPING</p>
+            <h3>{gift.tuckedTitle}</h3>
+            <p>{gift.tuckedBody}</p>
+            <button type="button" onClick={() => setTucked(false)}>
+              I heard you
+            </button>
+          </article>
+        </div>
+      )}
     </section>
   );
 }
